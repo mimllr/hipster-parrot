@@ -1,0 +1,10 @@
+<h1>Deck</h1>
+<h4><em>Posts from people you follow.</em></h4>
+
+<% @posts.reverse.each do |post| %>
+  <% if current_user.following?(post.user) %>
+    <h4><%= link_to post.user.username.downcase, user_path(post.user.id) %></h4>
+    <p><%= post.text %></p>
+    <p><small><em>Posted on <%= post.created_at.strftime('%A, %B %e at %m:%M %p') %>.</em></small></p>
+  <% end %>
+<% end %>

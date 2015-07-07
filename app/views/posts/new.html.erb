@@ -1,0 +1,14 @@
+<h1>Add New Post</h1>
+
+<%= form_for @post, url: {action: "create"}, html: {class: "form-horizontal"} do |f| %>
+  <div class="form-group">
+    <%= f.label :Post, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.text_field :text, class: 'form-control' %>
+    </div>
+  </div>
+    <div>
+      <%= f.submit nil, :class => 'btn btn-primary col-sm-offset-2' %>
+    </div>
+  </div>
+<% end %>

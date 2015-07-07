@@ -1,0 +1,30 @@
+<h1><%= @user.username %>'s profile</h1>
+
+<% if @user.id == session[:user_id] %>
+  <p>This is your profile</p>
+<% else %>
+  <% if current_user.following?(@user) %>
+    <p><%= link_to 'Unfollow', unfollow_user_path %></p>
+  <% else %>
+    <p><%= link_to 'Follow', follow_user_path %></p>
+  <% end %>
+<% end %>
+
+<h3>Followers</h3>
+<p><%= @user.followers.count %></p>
+<h3>Following</h3>
+<p><%= @user.follow_count %></p>
+<h3>Ratio</h3>
+<p><%= @ratio %></p>
+<h1>Feed <small><%= @post_count %></small></h1>
+<% if @user.posts.count > 0 %>
+  <% @user.posts.reverse.each do |post| %>
+    <h5><p>Posted on <%= post.created_at.strftime('%A, %B %e at %m:%M %p') %>.</p></h5> 
+    <p><%= post.text %>
+    <% if @user == current_user %>
+      <span> | <%= link_to("Delete", post_path(post), method: :delete, data: {confirm: "Are you sure?"}) %> </span></p>  
+    <% end %>
+  <% end %>
+<% else %>
+  <h3>No posts.</h3>
+<% end %>

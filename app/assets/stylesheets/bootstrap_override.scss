@@ -1,0 +1,17 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body { 
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 70px;
+}
+
+.navbar-inverse navbar-brand {
+  color: #fff;
+  font-size: 24px;
+}
+
+.center {
+  text-align: center;
+}
