@@ -8,8 +8,10 @@ class User < ActiveRecord::Base
   validates :email,     presence: true, 
                         uniqueness: true
   validates :username,  presence: true, 
-                        uniqueness: true
+                        uniqueness: true,
+                        length: { in: 3..15 }
 
+  validates :password,  length: { in: 6..20 }
   validates :password,  confirmation: true
   validates :password,  presence: true, 
                         on: :create, 
