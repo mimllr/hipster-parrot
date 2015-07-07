@@ -3,10 +3,12 @@
 <% if @user.id == session[:user_id] %>
   <p>This is your profile</p>
 <% else %>
-  <% if current_user.following?(@user) %>
-    <p><%= link_to 'Unfollow', unfollow_user_path %></p>
-  <% else %>
-    <p><%= link_to 'Follow', follow_user_path %></p>
+  <% if current_user %>
+    <% if current_user.following?(@user) %>
+      <p><%= link_to 'Unfollow', unfollow_user_path %></p>
+    <% elsif  %>
+      <p><%= link_to 'Follow', follow_user_path %></p>
+    <% end %>
   <% end %>
 <% end %>
 
