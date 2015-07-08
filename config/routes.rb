@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/deck', to: 'posts#deck'
+  get "post/new_release" => 'project#new_release', :as => :new_release
 
   resources :users do
     member do

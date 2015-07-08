@@ -4,7 +4,8 @@
 body { 
   max-width: 1170px;
   margin: 0 auto;
-  padding: 70px;
+  padding: 20px;
+  padding-top: 75px;
 }
 
 .navbar-inverse navbar-brand {
@@ -15,3 +16,69 @@ body {
 .center {
   text-align: center;
 }
+
+
+.navbar-nav {
+  margin-top: 12px;
+}
+
+.navbar-toggle {
+  margin-top: 20px;
+}
+
+
+#mainstream {
+  width: 50%;
+  min-width: 300px;
+}
+
+#deck {
+  width: 50%;
+  min-width: 300px;
+}
+
+
+.home-left {
+  width: 45%;
+  float: left;
+}
+
+.home-right {
+  width: 45%;
+  float: right;
+}
+
+
+
+#user-stats {
+  float:left;
+  width: 40%;
+  min-width: 300px;
+}
+
+#stat-left {
+  float: left;
+  width: 32%;
+  margin: 2px;
+}
+
+#stat-right {
+  float: right;
+  width: 32%;
+  margin: 2px;
+}
+
+#stat-center {
+  display: inline-block;
+  width: 32%;
+  margin: 2px;
+}
+
+#user-feed {
+  float: left;
+  width: 55%;
+  min-width: 300px;
+}
+
+
+
