@@ -2,15 +2,9 @@
   <h1>Add New Post</h1>
 
   <%= form_for @post, url: {action: "create", controller: "posts"}, html: {class: "form-horizontal"} do |f| %>
-    <div class="form-group">
-      <%= f.label :Post, class: 'col-sm-2 control-label' %>
-      <div class="col-sm-4">
-        <%= f.text_field :text, class: 'form-control' %>
-      </div>
-    </div>
-      <div>
-        <%= f.submit nil, :class => 'btn btn-primary col-sm-offset-2', "data-dismiss" => "modal", "aria-hidden" => "true" %>
-      </div>
+    <div class="col-sm-4">
+      <p><%= f.text_field :text, class: 'form-control' %></p>
+      <p><%= f.submit nil, :class => 'btn btn-success' %></p>
     </div>
   <% end %>
 </div>
