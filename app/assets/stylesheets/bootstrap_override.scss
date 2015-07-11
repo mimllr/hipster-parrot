@@ -2,7 +2,6 @@
 @import "bootstrap";
 
 body { 
-  max-width: 12800px;
   margin: 0 auto;
   padding-top: 70px;
 }
@@ -31,7 +30,7 @@ body {
 
 #hero {
   background: image-url('hero.jpg');
-  background-size: 1200px;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -117,6 +116,10 @@ body {
 @media screen and (max-width: 768px) {
   .navbar-nav li h4 {
     padding: 0px 15px;
+  }
+
+  #hero {
+    background-size: 1000px;
   }
 }
 
