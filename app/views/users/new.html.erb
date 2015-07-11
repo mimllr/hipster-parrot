@@ -1,46 +1,47 @@
-<h1>Sign Up</h1>
+<div id="signup">
+  <h1>Sign Up</h1>
+  <%= form_for @user, url: {action: "create"}, html: {class: "form-horizontal"} do |f| %>
+    <div class="form-group">
+       <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@user.errors.count, "error") %> prevented the account from being created.
+          </h2>
+          <ul>
+            <% @user.errors.full_messages.reverse.each do |error| %>
+              <li><%= error %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-<%= form_for @user, url: {action: "create"}, html: {class: "form-horizontal"} do |f| %>
-  <div class="form-group">
-     <% if @user.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@user.errors.count, "error") %> prevented the account from being created.
-        </h2>
-        <ul>
-          <% @user.errors.full_messages.reverse.each do |error| %>
-            <li><%= error %></li>
-          <% end %>
-        </ul>
+      <div class="form-group">
+        <%= f.label :username, class: 'col-sm-2 control-label' %>
+        <div class="col-sm-4">
+          <%= f.text_field :username, class: 'form-control' %>
+        </div>
       </div>
-    <% end %>
-
-    <div class="form-group">
-      <%= f.label :username, class: 'col-sm-2 control-label' %>
-      <div class="col-sm-4">
-        <%= f.text_field :username, class: 'form-control' %>
+      <div class="form-group">
+        <%= f.label :Email, class: 'col-sm-2 control-label' %>
+        <div class="col-sm-4">
+          <%= f.text_field :email, class: 'form-control' %>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :Email, class: 'col-sm-2 control-label' %>
-      <div class="col-sm-4">
-        <%= f.text_field :email, class: 'form-control' %>
+      <div class="form-group">
+        <%= f.label :Password, class: 'col-sm-2 control-label'  %>
+        <div class="col-sm-4">
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <%= f.label :Password, class: 'col-sm-2 control-label'  %>
-      <div class="col-sm-4">
-        <%= f.password_field :password, class: 'form-control' %>
+      <div class="form-group">
+        <%= f.label :Confirm_Password, class: 'col-sm-2 control-label' %>
+        <div class="col-sm-4">
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+      </div>
+      <div>
+        <%= f.submit nil, :class => 'btn btn-primary col-sm-offset-2' %>
       </div>
     </div>
-    <div class="form-group">
-      <%= f.label :Confirm_Password, class: 'col-sm-2 control-label' %>
-      <div class="col-sm-4">
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
-      </div>
-    </div>
-    <div>
-      <%= f.submit nil, :class => 'btn btn-primary col-sm-offset-2' %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

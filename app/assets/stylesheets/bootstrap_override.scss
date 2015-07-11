@@ -7,6 +7,19 @@ body {
   padding-top: 70px;
 }
 
+.navbar-inverse navbar-brand {
+  color: #fff;
+  font-size: 24px;
+}
+
+.navbar-nav {
+  margin-top: 12px;
+}
+
+.navbar-toggle {
+  margin-top: 20px;
+}
+
 #hero {
   background: image-url('hero.jpg');
   background-size: 1200px;
@@ -21,38 +34,41 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.hero-text
-
-.navbar-inverse navbar-brand {
-  color: #fff;
-  font-size: 24px;
-}
-
 .center {
   text-align: center;
 }
 
-
-.navbar-nav {
-  margin-top: 12px;
+#signup {
+  width: 70%;
+  margin: 0 auto;
 }
-
-.navbar-toggle {
-  margin-top: 20px;
-}
-
 
 #mainstream {
-  width: 50%;
+  width: 70%;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+#mainstream-feed {
+  width: 60%;
   min-width: 300px;
 }
 
 #deck {
-  width: 50%;
+  width: 70%;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+#deck-feed {
+  width: 60%;
   min-width: 300px;
 }
 
-
+#profile-container {
+  width: 90%;
+  margin: 0 auto;
+}
 
 #user-stats {
   float:left;
@@ -80,7 +96,7 @@ body {
 
 #user-feed {
   float: left;
-  width: 55%;
+  width: 50%;
   min-width: 300px;
 }
 
