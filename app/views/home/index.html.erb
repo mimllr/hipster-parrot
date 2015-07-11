@@ -1,13 +1,24 @@
-<div class="home-left">
-  <h1>Welcome to Hipster Parrot</h1>
-  <h2>Like Twitter, but before it was cool.</h2>
-  <h3>Mainstream</h3>
-  <p>The Mainstream is a global feed, where everyone's posts are shown. Some posts are cool. Others, maybe not.</p>
-  <h3>The Deck</h3>
-  <p>The Deck is your personal feed. Only posts by people you follow will be shown.</p>
-  <h3>Ratio</h3>
-  <p>Your ratio of followers to following. The higher the better.</p>
+<div id="hero">
+  <div class="hero-text">
+    <h1>Welcome to Hipster Parrot.</h1>
+    <h2>Like Twitter, but before it was cool.</h2>
+    <%= link_to 'Sign Up', new_user_path, class: "btn btn-success btn-lg" %>
+  </div>
 </div>
-<div class="home-right">
-  <%= image_tag 'HipsterParrot.png', :class => "home-parrot" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Mainstream</h3>
+      <p>The Mainstream is a global feed, where everyone's posts are shown. Some posts are cool. Others, maybe not.</p>
+    </div>
+    <div class="col-md-4">
+      <h3>The Deck</h3>
+      <p>The Deck is your personal feed. Only posts by people you follow will be shown.</p>
+    </div>
+    <div class="col-md-4">
+      <h3>Ratio</h3>
+      <p>Your ratio of followers to following. The higher the better.</p>
+    </div>
+  </div>
 </div>

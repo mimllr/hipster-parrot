@@ -2,11 +2,26 @@
 @import "bootstrap";
 
 body { 
-  max-width: 1170px;
+  max-width: 12800px;
   margin: 0 auto;
-  padding: 20px;
-  padding-top: 75px;
+  padding-top: 70px;
 }
+
+#hero {
+  background: image-url('hero.jpg');
+  background-size: 1200px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hero-text {
+  text-align: center;
+  padding: 100px 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-text
 
 .navbar-inverse navbar-brand {
   color: #fff;
@@ -35,17 +50,6 @@ body {
 #deck {
   width: 50%;
   min-width: 300px;
-}
-
-
-.home-left {
-  width: 45%;
-  float: left;
-}
-
-.home-right {
-  width: 45%;
-  float: right;
 }
 
 
@@ -78,6 +82,11 @@ body {
   float: left;
   width: 55%;
   min-width: 300px;
+}
+
+@media all and (max-width: 768px) {
+
+
 }
 
 
