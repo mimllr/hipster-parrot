@@ -2,7 +2,9 @@
   <div class="hero-text">
     <h1>Welcome to Hipster Parrot.</h1>
     <h2>Like Twitter, but before it was cool.</h2>
-    <%= link_to 'Sign Up', new_user_path, class: "btn btn-success btn-lg" %>
+    <% if !current_user %>
+      <%= link_to 'Sign Up', new_user_path, class: "btn btn-success btn-lg" %>
+    <% end %>
   </div>
 </div>
 
