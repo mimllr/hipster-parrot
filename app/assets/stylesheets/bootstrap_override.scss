@@ -7,6 +7,11 @@ body {
   padding-top: 70px;
 }
 
+#messages {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .navbar-inverse navbar-brand {
   color: #fff;
   font-size: 24px;
@@ -19,6 +24,11 @@ body {
 .navbar-toggle {
   margin-top: 20px;
 }
+
+.navbar-btn {
+  margin: 8px;
+}
+
 
 #hero {
   background: image-url('hero.jpg');
@@ -39,6 +49,11 @@ body {
 }
 
 #signup {
+  width: 70%;
+  margin: 0 auto;
+}
+
+#new-post {
   width: 70%;
   margin: 0 auto;
 }
@@ -100,10 +115,9 @@ body {
   min-width: 300px;
 }
 
-@media all and (max-width: 768px) {
-
-
+@media screen and (max-width: 768px) {
+  .navbar-nav li h4 {
+    padding: 0px 15px;
+  }
 }
-
-
 

@@ -1,14 +1,42 @@
-<h1>Add New Post</h1>
+<div id="new-post">
+  <h1>Add New Post</h1>
 
-<%= form_for @post, url: {action: "create"}, html: {class: "form-horizontal"} do |f| %>
-  <div class="form-group">
-    <%= f.label :Post, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-4">
-      <%= f.text_field :text, class: 'form-control' %>
+  <%= form_for @post, url: {action: "create", controller: "posts"}, html: {class: "form-horizontal"} do |f| %>
+    <div class="form-group">
+      <%= f.label :Post, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-4">
+        <%= f.text_field :text, class: 'form-control' %>
+      </div>
+    </div>
+      <div>
+        <%= f.submit nil, :class => 'btn btn-primary col-sm-offset-2', "data-dismiss" => "modal", "aria-hidden" => "true" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">New Post</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for @post, url: {action: "create", controller: "posts"}, html: {class: "form-horizontal"} do |f| %>
+          <div class="form-group">
+            <%= f.label :Post, class: 'col-sm-2 control-label' %>
+            <div class="col-sm-4">
+              <%= f.text_field :text, class: 'form-control' %>
+            </div>
+          </div>
+            <div>
+              <%= f.submit nil, :class => 'btn btn-primary col-sm-offset-2', "data-dismiss" => "modal", "aria-hidden" => "true" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-    <div>
-      <%= f.submit nil, :class => 'btn btn-primary col-sm-offset-2' %>
-    </div>
-  </div>
-<% end %>
+</div>
