@@ -27,16 +27,6 @@ class UsersController < ApplicationController
     else
       @post_count = ""
     end
-
-    following = @user.follow_count.to_f
-    followers = @user.followers.count.to_f
-    
-
-    if followers == 0
-      @ratio = "No ratio."
-    else
-      @ratio = (followers / following).round(2)
-    end
   end
 
   def follow
@@ -47,7 +37,7 @@ class UsersController < ApplicationController
         flash[:alert] = "You cannot follow yourself."
       else
         current_user.follow(@user)
-        redirect_to user_path(params[:id])
+        redirect_to :back
         flash[:notice] = "You are now following #{@user.username}."
       end
     else
@@ -56,16 +46,25 @@ class UsersController < ApplicationController
   end
 
 
+
   def unfollow
     @user = User.find(params[:id])
 
     if current_user
       current_user.stop_following(@user)
-      redirect_to user_path(params[:id])
+      redirect_to :back
       flash[:notice] = "You are no longer following #{@user.username}."
     else
       flash[:alert] = "You must <a href='/login'>login</a> to unfollow #{@user.username}.".html_safe
     end
+  end
+
+  def followers
+    @user = User.find_by_id(params[:id])
+  end
+
+  def following
+    @user = User.find_by_id(params[:id])
   end
 
   private

@@ -1,31 +1,34 @@
 <div class="clear"></div>
 <div id="profile-container">
-  <div id="user-stats">
-    <h1><%= @user.username %>'s profile</h1>
-
+  <div class="user-stats">
     <% if @user.id == session[:user_id] %>
-      <p>This is your profile</p>
+      <h1>This is your profile</h1>
     <% else %>
+      <h1><%= @user.username %>'s profile
       <% if current_user %>
         <% if current_user.following?(@user) %>
-          <p><%= link_to 'Unfollow', unfollow_user_path %></p>
+          <%= link_to 'Unfollow', unfollow_user_path, class: "btn btn-primary" %>
         <% elsif  %>
-          <p><%= link_to 'Follow', follow_user_path %></p>
+          <%= link_to 'Follow', follow_user_path, class: "btn btn-primary" %>
         <% end %>
-      <% end %>
+      <% end %></h1>
     <% end %>
 
-    <div id="stat-left">
-      <small>Followers</small>
-      <h4><%= @user.followers.count %></h4>
-    </div>
-    <div id="stat-center">
-      <small>Following</small>
-      <h4><%= @user.follow_count %></h4>
-    </div>
-    <div id="stat-right">
+    <%= link_to followers_path do %>
+      <div class="stat-left">
+        <small>Followers</small>
+        <h4><%= @user.followers.count %></h4>
+      </div>
+    <% end %>
+    <%= link_to following_path do %>
+      <div class="stat-center">
+        <small>Following</small>
+        <h4><%= @user.follow_count %></h4>
+      </div>
+    <% end %>
+    <div class="stat-right">
       <small>Ratio</small>
-      <h4><%= @ratio %></h4>
+      <h4><%= @user.ratio %></h4>
     </div>
   </div>
 
