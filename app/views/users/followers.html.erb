@@ -1,5 +1,4 @@
 <div id="follow-container">
-  <div id="follow-feed">
     <h1>@<%= @user.username %>'s followers</h1>
     <% @user.followers.each do |follower| %>
       <div class="follow-stats">
@@ -33,5 +32,4 @@
         </div>
       </div>
     <% end %>
-  </div>
 </div>

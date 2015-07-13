@@ -1,5 +1,4 @@
 <div id="follow-container">
-  <div id="follow-feed">
     <h1>Following @<%= @user.username %></h1>
     <% @user.all_following.each do |following| %>
       <div class="follow-stats">
@@ -9,7 +8,7 @@
         <% else %>
           <% if current_user %>
             <% if current_user.following?(following) %>
-              <p><%= link_to 'Unfollow', unfollow_user_path(:id => following.id), class: "btn btn-primary" %></p>
+              <p><%= link_to 'Unfollow', unfollow_user_path(:id => following.id), class: "btn btn-default" %></p>
             <% elsif  %>
               <p><%= link_to 'Follow', follow_user_path(:id => following.id), class: "btn btn-primary" %></p>
             <% end %>
@@ -33,5 +32,4 @@
         </div>
       </div>
     <% end %>
-  </div>
 </div>

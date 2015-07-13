@@ -9,10 +9,14 @@
           <div class="panel-heading">
             <h3 class="panel-title">
               <%= link_to "@" + post.user.username, post.user %> | 
-              <% if current_user.following?(post.user) %>
-                <span><%= link_to 'Unfollow', unfollow_user_path(:id => post.user.id) %></span>
-              <% elsif  %>
-                <span><%= link_to 'Follow', follow_user_path(:id => post.user.id) %></span>
+              <% if post.user != current_user %>
+                <% if current_user.following?(post.user) %>
+                  <span><%= link_to 'Unfollow', unfollow_user_path(:id => post.user.id), class: "btn btn-default btn-xs" %></span>
+                <% elsif %>
+                  <span><%= link_to 'Follow', follow_user_path(:id => post.user.id), class: "btn btn-primary btn-xs" %></span>
+                <% end %>
+              <% else %>
+                <span class="label label-default">This is you</span>
               <% end %>
             </h3>
           </div>

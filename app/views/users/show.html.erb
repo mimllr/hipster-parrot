@@ -7,7 +7,7 @@
       <h1><%= @user.username %>'s profile
       <% if current_user %>
         <% if current_user.following?(@user) %>
-          <%= link_to 'Unfollow', unfollow_user_path, class: "btn btn-primary" %>
+          <%= link_to 'Unfollow', unfollow_user_path, class: "btn btn-default" %>
         <% elsif  %>
           <%= link_to 'Follow', follow_user_path, class: "btn btn-primary" %>
         <% end %>

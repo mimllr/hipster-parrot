@@ -79,19 +79,19 @@ body {
 }
 
 #profile-container {
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
 }
 
 #follow-container {
-  width: 60%;
+  width: 70%;
   min-width: 300px;
   margin: 0 auto;
 }
 
 #follow-feed {
-  width: 90%;
-  margin: 0 auto; 
+  width: 60%;
+  min-width: 300px;
 }
 
 .follow-stats {
@@ -104,7 +104,6 @@ body {
 }
 
 .user-stats {
-  float:left;
   width: 40%;
   min-width: 300px;
 }
@@ -128,8 +127,7 @@ body {
 }
 
 #user-feed {
-  float: left;
-  width: 50%;
+  width: 60%;
   min-width: 300px;
 }
 
