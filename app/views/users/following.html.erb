@@ -1,0 +1,35 @@
+<div id="follow-container">
+    <h1>Following @<%= @user.username %></h1>
+    <% @user.all_following.each do |following| %>
+      <div class="follow-stats">
+        <h1><%= link_to "@" + following.username, following %></h1>
+        <% if following.id == session[:user_id] %>
+          <p><span class="label label-primary">This is your profile</span></p>
+        <% else %>
+          <% if current_user %>
+            <% if current_user.following?(following) %>
+              <p><%= link_to 'Unfollow', unfollow_user_path(:id => following.id), class: "btn btn-default" %></p>
+            <% elsif  %>
+              <p><%= link_to 'Follow', follow_user_path(:id => following.id), class: "btn btn-primary" %></p>
+            <% end %>
+          <% end %>
+        <% end %>
+        <%= link_to followers_path(:id => following.id) do %>
+          <div class="stat-left">
+            <small>Followers</small>
+            <h4><%= following.followers.count %></h4>
+          </div>
+        <% end %>
+        <%= link_to following_path(:id => following.id) do %>
+          <div class="stat-center">
+            <small>Following</small>
+            <h4><%= following.follow_count %></h4>
+          </div>
+        <% end %>
+        <div class="stat-right">
+          <small>Ratio</small>
+          <h4><%= following.ratio %></h4>
+        </div>
+      </div>
+    <% end %>
+</div>

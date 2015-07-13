@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/deck', to: 'posts#deck'
-  get "post/new_release" => 'project#new_release', :as => :new_release
+  get 'users/:id/followers/', to: 'users#followers', as: 'followers'
+  get 'users/:id/following/', to: 'users#following', as: 'following'
+  
+  resources :account_activations, only: [:edit]
 
   resources :users do
     member do
@@ -12,5 +15,6 @@ Rails.application.routes.draw do
       get :unfollow
     end
   end
+
   resources :posts
 end

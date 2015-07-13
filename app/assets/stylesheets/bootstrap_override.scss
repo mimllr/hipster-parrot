@@ -79,37 +79,55 @@ body {
 }
 
 #profile-container {
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
 }
 
-#user-stats {
-  float:left;
+#follow-container {
+  width: 70%;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+#follow-feed {
+  width: 60%;
+  min-width: 300px;
+}
+
+.follow-stats {
+  width: 45%;
+  min-width: 300px;
+  padding: 1px 0px 15px 30px;
+  margin-bottom: 15px;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+}
+
+.user-stats {
   width: 40%;
   min-width: 300px;
 }
 
-#stat-left {
+.stat-left {
   float: left;
   width: 32%;
   margin: 2px;
 }
 
-#stat-right {
+.stat-right {
   float: right;
   width: 32%;
   margin: 2px;
 }
 
-#stat-center {
+.stat-center {
   display: inline-block;
   width: 32%;
   margin: 2px;
 }
 
 #user-feed {
-  float: left;
-  width: 50%;
+  width: 60%;
   min-width: 300px;
 }
 
@@ -122,4 +140,10 @@ body {
     background-size: 1000px;
   }
 }
+
+a, a:hover {
+  text-decoration: none;  
+}
+
+
 
