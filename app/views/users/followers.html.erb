@@ -23,13 +23,13 @@
           <%= link_to followers_path(:id => follower.id) do %>
             <div class="stat-left">
               <small>Followers</small>
-              <h4><%= @user.followers.count %></h4>
+              <h4><%= follower.followers.count %></h4>
             </div>
           <% end %>
           <%= link_to following_path(:id => follower.id) do %>
             <div class="stat-center">
               <small>Following</small>
-              <h4><%= @user.follow_count %></h4>
+              <h4><%= follower.follow_count %></h4>
             </div>
           <% end %>
           <div class="stat-right">
