@@ -6,7 +6,7 @@
     <% if @posts.count > 0 %>
       <% @posts.reverse.each do |post| %>
         <% if current_user && current_user.following?(post.user) %>
-          <div class="panel panel-default">
+          <div class="panel panel-success">
             <div class="panel-heading">
               <h3 class="panel-title"><%= link_to "@" + post.user.username, post.user %> | <span><%= link_to 'Unfollow', unfollow_user_path(:id => post.user.id), class: "btn btn-default btn-xs" %></span></h3>
             </div>
